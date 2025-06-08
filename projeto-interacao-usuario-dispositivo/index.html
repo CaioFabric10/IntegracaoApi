@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+
+    <link rel="stylesheet" href="Css/styles.css" />
+    <script src="https://kit.fontawesome.com/2ca71d1b50.js" crossorigin="anonymous"></script>
+</head>
+    <body>
+        <div class="finisher-header"></div>
+        <div class="container">
+            <div class="content first-content">
+                <div class="first-colunm">
+                    <h2 class="title title-primary">Bem-vindo</h2>
+                    <p class="description description-primary">Para permanecer conectado conosco, por favor</p>
+                    <p class="description description-primary">efetue o login com suas informações pessoais</p>
+                    <button id="signIn" class="button button-primary">Acessar</button>
+                </div>
+
+                <div class="second-colunm">
+                    <h2 class="title title-second">Crie sua conta</h2>
+                    <div class="social-midia">
+                        <ul class="list-social-midia">
+                            <a href="#" class="link-social-midia"><li class="item-social-midia"><i class="fab fa-facebook-f"></i></li></a>
+                            <a href="#" class="link-social-midia"><li class="item-social-midia"><i class="fab fa-google"></i></li></a>
+                            <a href="#" class="link-social-midia"><li class="item-social-midia"><i class="fab fa-linkedin-in"></i></li></a>
+                        </ul>
+                    </div>
+                    <p class="description description-second">Ou cadastre-se:</p>
+                    <form id="formCadastro" class="form">
+                        <label class="label label-input">
+                            <i class="fas fa-user icons"></i>
+                            <input type="text" id="nomeCadastro" name="nome" placeholder="Nome" required />
+                        </label>
+                        <label class="label label-input">
+                            <i class="fas fa-envelope icons"></i>
+                            <input type="email" id="emailCadastro" name="email" placeholder="E-mail" required />
+                        </label>
+                        <label class="label label-input">
+                            <i class="fas fa-lock icons"></i>
+                            <input type="password" id="senhaCadastro" name="senha" placeholder="Senha" required />
+                        </label>
+                        <label class="label label-input">
+                            <i class="fas fa-lock icons"></i>
+                            <input type="password" id="confirmarSenhaCadastro" name="confirmarSenha" placeholder="Confirmar Senha" required />
+                        </label>
+                        <button type="submit" class="button button-second">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="content second-content">
+                <div class="first-colunm">
+                    <h2 class="title title-primary">Olá, Bem Vindo!</h2>
+                    <p class="description description-primary">Faça seu cadastro</p>
+                    <p class="description description-primary">e começe sua jornada conosco</p>
+                    <button id="signUp" class="button button-primary">Cadastrar</button>
+                </div>
+
+                <div class="second-colunm">
+                    <h2 class="title title-second">Acesse com a sua conta</h2>
+                    <p class="description description-second">ou utilize seu e-mail e senha</p>
+                    <form id="formLogin" class="form">
+                        <label class="label label-input">
+                            <i class="fas fa-envelope icons"></i>
+                            <input type="email" id="emailLogin" name="email" placeholder="E-mail" required />
+                        </label>
+                        <label class="label label-input">
+                            <i class="fas fa-lock icons"></i>
+                            <input type="password" id="senhaLogin" name="senha" placeholder="Senha" required />
+                        </label>
+                        <a href="#" class="description description-second">Esqueceu sua senha?</a>
+                        <button type="submit" class="button button-second">Acessar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div id="toast" class="toast hidden"></div>
+
+        <script type="module" src="Js/login.js"></script>
+        <script src="Js/finisher-header.es5.min.js" type="text/javascript"></script>
+        <script>
+            let finisher = new FinisherHeader({
+                "count": 100,
+                "size": { "min": 2, "max": 8, "pulse": 0 },
+                "speed": {
+                    "x": { "min": 0, "max": 0.4 },
+                    "y": { "min": 0, "max": 0.6 }
+                },
+                "colors": {
+                    "background": "#201e30",
+                    "particles": ["#fbfcca", "#d7f3fe", "#ffd0a7"]
+                },
+                "blending": "overlay",
+                "opacity": { "center": 1, "edge": 0 },
+                "skew": 0,
+                "shapes": ["t", "c"]
+            });
+
+            window.addEventListener('resize', () => {
+                document.querySelector('.finisher-header').innerHTML = '';
+                finisher = new FinisherHeader({
+                    "count": 100,
+                    "size": { "min": 2, "max": 8, "pulse": 0 },
+                    "speed": {
+                        "x": { "min": 0, "max": 0.4 },
+                        "y": { "min": 0, "max": 0.6 }
+                    },
+                    "colors": {
+                        "background": "#201e30",
+                        "particles": ["#fbfcca", "#d7f3fe", "#ffd0a7"]
+                    },
+                    "blending": "overlay",
+                    "opacity": { "center": 1, "edge": 0 },
+                    "skew": 0,
+                    "shapes": ["t", "c"]
+                });
+            });
+        </script>
+    </body>
+</html>
