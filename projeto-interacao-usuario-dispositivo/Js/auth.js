@@ -20,10 +20,10 @@ export async function registrarUsuario(email, senha, senhaConfirmada) {
             console.warn("⚠️ Resposta sem JSON");
         }
 
-        console.log("✅ Status da resposta:", response.status);
+        console.log("Status da resposta:", response.status);
         return { status: response.status, data };
     } catch (error) {
-        console.error("❌ Erro de rede:", error);
+        console.error("Erro de rede:", error);
         return { status: 500, data: { mensagem: 'Erro de rede ou servidor fora do ar.' } };
     }
 }
@@ -43,7 +43,7 @@ export async function autenticarUsuario(email, senha) {
         try {
             data = await response.json();
         } catch (e) {
-            console.warn("⚠️ Resposta sem JSON");
+            console.warn("Resposta sem JSON");
         }
 
         return { status: response.status, data };

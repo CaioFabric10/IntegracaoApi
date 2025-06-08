@@ -2,7 +2,8 @@
 
 ## 🎯 Objetivo
 
-Este projeto tem como finalidade integrar uma interface front-end personalizada com a API de autenticação da UMFG. O sistema permite que usuários possam se registrar, realizar login e visualizar uma mensagem de boas-vindas após a autenticação bem-sucedida.
+Este projeto tem como finalidade integrar uma interface front-end personalizada com a API de 
+autenticação da UMFG. O sistema permite que usuários possam se registrar, realizar login e visualizar uma mensagem de boas-vindas após a autenticação bem-sucedida, utilizando token JWT com expiração.
 
 ---
 
@@ -10,10 +11,11 @@ Este projeto tem como finalidade integrar uma interface front-end personalizada 
 
 - HTML5, CSS3 e JavaScript (ES6 Modules)
 - FontAwesome (ícones)
-- Validação de formulários via JS
-- API RESTful fornecida pela UMFG
+- Toast customizado para feedbacks visuais
+- Validação de formulários via JS (client-side)
+- Integração com API RESTful da UMFG (Heroku)
 - Efeitos visuais com FinisherHeader
-- Deploy via [Vercel](https://vercel.com/)
+- Deploy público via [Vercel](https://integracao-api-gkeq.vercel.app)
 
 ---
 
@@ -21,24 +23,32 @@ Este projeto tem como finalidade integrar uma interface front-end personalizada 
 
 ### 🔸 Cadastro de Usuário
 - Validação de email com regex
-- Verificação de senhas iguais
-- Validação de senha forte (mínimo 8 caracteres e 1 número)
-- Exibição de mensagens de erro retornadas pela API
+- Verificação se as senhas coincidem
+- Validação de senha forte (mínimo 8 caracteres, 1 caracter especial, 1 letra maiúscula e minúscula)
+- Integração com a API `/Autenticacao/registar`
+- Mensagem visual de sucesso ou erro (toast)
 
 ### 🔸 Login
-- Validação de email
-- Armazenamento de dados do usuário no `localStorage`
+- Integração com a API `/Autenticacao/autenticar`
+- Validação de email e senha
+- Armazenamento de:
+   - Email do usuário
+   - Token JWT
+   - Data de expiração do token
+- Tratamento de login inválido (`401 Unauthorized`)
 - Redirecionamento para a tela de boas-vindas
-- Exibição de mensagens de erro personalizadas
 
 ### 🔸 Tela de Boas-Vindas
-- Exibe email do usuário autenticado
-- Mostra a data de expiração do token JWT
+- Exibe:
+   - Email do usuário autenticado
+   - Data/hora de expiração do token (formatada em `pt-BR`)
+- Fallback para “usuário não autenticado” ou data inválida
 
-### 🔸 Interface e Visual
-- Layout responsivo e moderno
-- Transições suaves entre telas
-- Efeito visual animado com partículas no cabeçalho
+### 🔸 Interface e Experiência Visual
+- Layout moderno com transição entre telas de login e cadastro
+- Animação de partículas com FinisherHeader
+- Responsividade básica
+- Feedback visual via sistema de toasts personalizados
 
 ---
 
@@ -46,4 +56,8 @@ Este projeto tem como finalidade integrar uma interface front-end personalizada 
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   https://github.com/CaioFabric10/IntegracaoApi.git
+
+## 🌐 Acesso online
+
+O projeto está hospedado no Vercel e pode ser acessado diretamente via: [Vercel](https://integracao-api-gkeq.vercel.app)
